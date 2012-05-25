@@ -1,0 +1,1 @@
+Binary clock for arduino. Displays hour and minute in binary not substituting  binary for decimal place values. Can be used in conjunction with a series of AND gates for an additional alarm.
