@@ -1,16 +1,18 @@
+
+
 #define BUTTON 12
 
 int sum_set = 0;
 int val = 0; //store the state of input pin
 int old_val =0;
-int time_run =0;
+unsigned long time_run =0;
 int adjust = 0;
 void calculate(int);
 
 void setup(){
   int j; //index variable
   for(j=2; j<=11; j++){
-    pinMode(j, OUTPUT); //pins 2-9 output
+    pinMode(j, OUTPUT); //pins 2-11 output
   }
   pinMode(BUTTON, INPUT); //button read
 }
@@ -45,7 +47,7 @@ void calculate(int sum){
                                                      // led place
                                                      // value
   
-  if(sum == led_calc[0]) //reset once we get to 100
+  if(sum == led_calc[0]) //reset once we get to 12 hrs
     sum_set = 0;
   
   for(k=1; k<=10; k++){
