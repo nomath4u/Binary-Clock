@@ -32,23 +32,23 @@ void loop(){
     sum_set= (time_run / 1000) + adjust;
    
    
-   calculate(sum_set);
-   for(j=2; j<=9; j++)
+   calculate(sum_set, &sum_set);
+   for(j=2; j<=11; j++)
      digitalWrite(j, LOW); //clear lights that may not need to be on
    
 }
 
 //Determine which lights need to be on
 
-void calculate(int sum){
+void calculate(int sum, int sum_set ){
   int k; // index variable
   
   int led_calc[] = {43200,28800,14400, 7200, 3600, 1920, 960, 480, 240, 120,60};// array for
                                                      // led place
                                                      // value
   
-  if(sum == led_calc[0]) //reset once we get to 12 hrs
-    sum_set = 0;
+  if(sum >= led_calc[0]) //reset once we get to 12 hrs
+    *sum_set = 0;
   
   for(k=1; k<=10; k++){
     if( sum >= led_calc[k]){
