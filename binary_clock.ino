@@ -53,7 +53,7 @@ void calculate(unsigned int sum, unsigned int* sum_set, int* adjust){
                                                      // value
   
   if(sum >= led_calc[0]){ //reset once we get to 12 hrs
-    *sum_set = 0;
+    *sum_set = (unsigned int) 0;
     *adjust = 0;
   }
   
